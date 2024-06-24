@@ -48,7 +48,7 @@ window.onscroll = () => {
 let imgs = document.querySelectorAll(`.imgSwap`);
 let colorLinks = document.querySelectorAll(`header div button`);
 
-// Función para cambiar las imágenes y los colores
+
 function changeColor(colorButtons) {
     imgs.forEach(el => {
         if (el.id == "imgHome") {
@@ -66,20 +66,17 @@ function changeColor(colorButtons) {
     localStorage.setItem('colorPalette', colorPalette);
 }
 
-// Añadir evento a cada botón de color
 colorLinks.forEach(colorButtons => {
     colorButtons.onclick = () => {
         changeColor(colorButtons);
     }
 });
 
-// Función para aplicar el color guardado en localStorage al cargar la página
 function applySavedColor() {
     let savedColor = localStorage.getItem('selectedColor');
     let savedColorPalette = localStorage.getItem('colorPalette');
 
     if (savedColor && savedColorPalette) {
-        // Encontrar el botón de color correspondiente
         let savedButton = Array.from(colorLinks).find(button => button.id === savedColor);
         
         if (savedButton) {
@@ -88,7 +85,6 @@ function applySavedColor() {
     }
 }
 
-// Aplicar el color guardado al cargar la página
 document.addEventListener('DOMContentLoaded', applySavedColor);
 
 
@@ -173,6 +169,5 @@ btnDarkClear.onclick = () => {
     }
 
     localStorage.setItem("darkMode", lsCurrentMode);
-    console.log("lsDarkMode", lsCurrentMode);
 }
 
