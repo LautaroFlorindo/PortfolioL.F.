@@ -52,9 +52,9 @@ let colorLinks = document.querySelectorAll(`header div button`);
 function changeColor(colorButtons) {
     imgs.forEach(el => {
         if (el.id == "imgHome") {
-            el.src = `https://lautaroflorindo.github.io/images/home${colorButtons.id}.png`;
+            el.src = `/images/home${colorButtons.id}.png`;
         } else if (el.id == "imgAbout") {
-            el.src = `https://lautaroflorindo.github.io/images/about${colorButtons.id}.png`;
+            el.src = `/images/about${colorButtons.id}.png`;
         }
     });
 
