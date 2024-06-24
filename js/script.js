@@ -52,9 +52,9 @@ let colorLinks = document.querySelectorAll(`header div button`);
 function changeColor(colorButtons) {
     imgs.forEach(el => {
         if (el.id == "imgHome") {
-            el.src = `/images/home` + colorButtons.id + `.png`;
+            el.src = `https://lautaroflorindo.github.io/images/home${colorButtons.id}.png`;
         } else if (el.id == "imgAbout") {
-            el.src = `/images/about` + colorButtons.id + `.png`;
+            el.src = `https://lautaroflorindo.github.io/images/about${colorButtons.id}.png`;
         }
     });
 
@@ -62,7 +62,6 @@ function changeColor(colorButtons) {
 
     document.documentElement.style.setProperty("--first-color", colorPalette);
 
-    // Guardar el color en localStorage
     localStorage.setItem('selectedColor', colorButtons.id);
     localStorage.setItem('colorPalette', colorPalette);
 }
